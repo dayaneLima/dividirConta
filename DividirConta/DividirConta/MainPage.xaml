@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DividirConta"
+             x:Class="DividirConta.MainPage"
+             Title="Dividir Conta"
+             Padding="10">
+
+    <StackLayout>
+
+
+        <Label Text="Total de pessoas:" />
+        <Entry Keyboard="Numeric"
+               x:Name="TotalPessoasEntry"/>
+
+        <Label Text="Valor total:" />
+        <Entry Keyboard="Numeric"
+               x:Name="ValorTotalEntry"/>
+
+        <Label Text="Porcentagem garçon:" />
+        <Entry Keyboard="Numeric"
+               x:Name="PorcentagemGarcomEntry"/>
+
+
+        <Grid>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Button Text="Limpar"
+                    Grid.Column="0"
+                    Grid.Row="0" 
+                    x:Name="LimparButton"/>
+            
+            <Button Text="Calcular"
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    x:Name="CalcularButton"/>
+            
+        </Grid>
+        
+        
+    </StackLayout>
+
+</ContentPage>
