@@ -4,12 +4,19 @@
              x:Class="DividirConta.ResultadoPage"
              Title="Resultado">
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="FillAndExpand"
-                     VerticalOptions="FillAndExpand">
 
-            <StackLayout HorizontalOptions="CenterAndExpand"
-                         VerticalOptions="CenterAndExpand">
-                
+        <StackLayout HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand">
+            
+            <StackLayout Orientation="Horizontal">
+
+                <Label Text="&#xf1ec;" FontSize="Large">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String" Android="fa-solid-900.ttf#Font Awesome 5 Free Regular" 
+                                                       iOS="Font Awesome 5 Free"/>
+                    </Label.FontFamily>
+                </Label>
+
                 <Label FontSize="Large"
                        x:Name="ValorPorPessoa"/>
                 

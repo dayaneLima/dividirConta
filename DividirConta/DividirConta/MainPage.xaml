@@ -19,9 +19,8 @@
 
         <Label Text="Porcentagem garçon:" />
         <Entry Keyboard="Numeric"
-               x:Name="PorcentagemGarcomEntry"/>
-
-
+               x:Name="PorcentagemGarcomEntry"/>       
+        
         <Grid>
             
             <Grid.ColumnDefinitions>

@@ -23,7 +23,7 @@ namespace DividirConta
         {
             var valorGarcom = porcentagemGarcom > 0 ? (valorTotal * porcentagemGarcom / 100) : 0;
             var valor = (valorTotal + valorGarcom) / totalPessoas;
-            ValorPorPessoa.Text = $"Valor por pessoa: R$ {valor.ToString("C")}";
+            ValorPorPessoa.Text = $"Valor por pessoa: {valor.ToString("C")}";
         }
 	}
 }
