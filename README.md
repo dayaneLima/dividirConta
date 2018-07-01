@@ -211,6 +211,32 @@ namespace DividirConta
 }
 ```
 
+## Visualização com o Xamarin Live Reload
+
+Para visualizar o layout a medida que as telas estão sendo criadas pode-se utilizar o Xamarin Live Reload. Para funcionar o seu Visual Studio deve ser no mínimo a versão 15.7 e o projeto do Xamarin forms ser no mínimo a 3.0.
+
+Para instalar o Live Reload primeiro é necessário instalar o plugin no visual studio. Vá em Tools -> Extensions and Update -> Online e pesquise Xamarin Live Reload - Preview. Ao encontrar clique em instalar, após feche seu Visual Studio que ele começará a instalação. Abaixo é mostrado uma demo de como é esse processo:
+
+![Install Live Reload Visual Studio](https://github.com/dayaneLima/dividirConta/blob/master/Docs/Imgs/dividirContaInstallLiveReload.gif)
+
+Após a instalação, abra seu projeto Xamarin Forms no Visual Studio, clique sobre sua solution com o botão direito e vá em Manage Nuget Packages for Solution, na guia de Browse pesquise por Xamarin.LiveReload, clique em instalar e marque seu Projeto principal, o Android e IOS.
+
+Após, vá no seu projejto principal, abra o App.xaml.cs, no construtor dessa classe, antes do método InitializeComponent(), adicione o trecho de código abaixo:
+
+```c#
+#if DEBUG
+LiveReload.Init();
+#endif
+```
+
+Agora execute seu projeto no emulador, assim que o mesmo estiver abrindo, vai aparecer uma tarja amarela com um aviso e falando para você clicar em connect, então clique nesta opção para ativar o live reload.
+
+Pronto, agora toda alteração que fizer no layout, assim que clicar em salvar, será exibida no seu emulado.
+
+Abaixo segue um gif ilustrando esse processo completo:
+
+![Add Live Reload Xamarin Forms](https://github.com/dayaneLima/dividirConta/blob/master/Docs/Imgs/dividirContaXamarinLiveReload.gif)
+
 ## Demo
 
 ![Criar Page](https://github.com/dayaneLima/dividirConta/blob/master/Docs/Imgs/dividirContaDemoApp.gif)
