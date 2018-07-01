@@ -9,7 +9,12 @@ namespace DividirConta
 	{
 		public App ()
 		{
-			InitializeComponent();
+            // Initialize Live Reload.
+            #if DEBUG
+            LiveReload.Init();
+            #endif
+
+            InitializeComponent();
 
 			MainPage = new NavigationPage(new MainPage());
 		}
