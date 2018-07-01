@@ -17,7 +17,7 @@
         <Entry Keyboard="Numeric"
                x:Name="ValorTotalEntry"/>
 
-        <Label Text="Porcentagem garçon:" />
+        <Label Text="Porcentagem garçom:" />
         <Entry Keyboard="Numeric"
                x:Name="PorcentagemGarcomEntry"/>       
         
