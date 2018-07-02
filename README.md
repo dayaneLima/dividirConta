@@ -1,4 +1,4 @@
-# dividirConta
+# Dividir Conta
 Projeto Demo para o curso de férias de Introdução ao Xamarin Forms da PUC Minas Contagem - 2018.
 
 Dividir conta é um App nativo feito em Xamarin Forms para calcular o valor que cada pessoa pagará na hora de dividir a conta do restaurante.
@@ -8,8 +8,7 @@ Dividir conta é um App nativo feito em Xamarin Forms para calcular o valor que 
 
 ## Primeira tela
 
-Tela com os campos para preencher o número de pessoas, valor total e a porcentagem do garçom. Há um botão para limpar os dados preenchidos e outro para calcular o 
-valor total que cada pessoa pagará. Ao clicar em calcular, abrirá outra tela exibindo o resultado do cálculo.
+Na tela principal temos os campos para preencher o número de pessoas, valor total e a porcentagem do garçom. Também há um botão para limpar os dados preenchidos e outro para calcular o valor total que cada pessoa pagará. Ao clicar em calcular, um nova tela se abrirá exibindo o resultado do cálculo.
 
 Abaixo se encontra o código do Layout da tela:
 
@@ -213,15 +212,15 @@ namespace DividirConta
 
 ## Visualização com o Xamarin Live Reload
 
-Para visualizar o layout a medida que as telas estão sendo criadas pode-se utilizar o Xamarin Live Reload. Para funcionar o seu Visual Studio deve ser no mínimo a versão 15.7 e o projeto do Xamarin forms ser no mínimo a 3.0.
+Para visualizar o layout a medida que as telas estão sendo criadas pode-se utilizar o Xamarin Live Reload. Seu Visual Studio deve está  no mínimo na versão 15.7 e o projeto do Xamarin Forms deve estar ser no mínimo na versão 3.0.
 
-Para instalar o Live Reload primeiro é necessário instalar o plugin no visual studio. Vá em Tools -> Extensions and Update -> Online e pesquise Xamarin Live Reload - Preview. Ao encontrar clique em Download, após feche seu Visual Studio que ele começará a instalação. Abaixo é mostrado uma demo de como é esse processo:
+Para instalar o Live Reload primeiro é necessário instalar o plugin no Visual Studio. Vá em Tools -> Extensions and Update -> Online e pesquise Xamarin Live Reload - Preview. Ao encontrar clique em Download, após feche seu Visual Studio que ele começará a instalação. Abaixo é mostrado uma demo de como é esse processo:
 
 ![Install Live Reload Visual Studio](https://github.com/dayaneLima/dividirConta/blob/master/Docs/Imgs/dividirContaInstallLiveReload.gif)
 
 Após a instalação, abra seu projeto Xamarin Forms no Visual Studio, clique sobre sua solution com o botão direito e vá em Manage Nuget Packages for Solution, na guia de Browse pesquise por Xamarin.LiveReload e marque o Package Resource para All, se não você não conseguirá achar a biblioteca. Após clique em instalar e marque seu Projeto principal, o Android e IOS.
 
-Após, vá no seu projejto principal, abra o App.xaml.cs, no construtor dessa classe, antes do método InitializeComponent(), adicione o trecho de código abaixo:
+Em seguida, vá no seu projejto principal, abra o App.xaml.cs, no construtor dessa classe, antes do método InitializeComponent(), adicione o trecho de código abaixo:
 
 ```c#
 #if DEBUG
@@ -229,9 +228,9 @@ LiveReload.Init();
 #endif
 ```
 
-Agora execute seu projeto no emulador, assim que o mesmo estiver abrindo, vai aparecer uma tarja amarela com um aviso e falando para você clicar em connect, então clique nesta opção para ativar o live reload.
+Agora execute seu projeto no emulador, assim que o mesmo estiver abrindo, vai aparecer uma tarja amarela com um aviso e informando que você deve clicar em connect e então clicar nesta opção para ativar o live reload.
 
-Pronto, agora toda alteração que fizer no layout, assim que clicar em salvar, será exibida no seu emulado.
+Pronto, agora toda alteração que fizer no layout, assim que clicar em salvar, será exibida no seu emulador.
 
 Abaixo segue um gif ilustrando esse processo completo:
 
