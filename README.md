@@ -6,6 +6,19 @@ Dividir conta é um App nativo feito em Xamarin Forms para calcular o valor que 
 ## Como criar um projeto Xamarin Forms no Visual Studio
 ![Criar Projeto Xamarin Forms](https://github.com/dayaneLima/dividirConta/blob/master/Docs/Imgs/dividirContaCriacaoProjeto.gif)
 
+## Navegação - App.xaml.cs
+Como usaremos navegação entre telas, temos que definir que nossa tela inicial seja chamada já utilizando navegação. Abra o arquivo App.xaml.cs, no construtor tem o seguinte código:
+
+```c#
+  MainPage = new MainPage();
+```
+
+Altere para o cógido abaixo:
+
+```c#
+  MainPage = new NavigationPage(new MainPage());
+```
+
 ## Primeira tela
 
 Na tela principal temos os campos para preencher o número de pessoas, valor total e a porcentagem do garçom. Também há um botão para limpar os dados preenchidos e outro para calcular o valor total que cada pessoa pagará. Ao clicar em calcular, um nova tela se abrirá exibindo o resultado do cálculo.
@@ -172,7 +185,7 @@ Na segunda tela é feito o cálculo do valor pago por pessoa e exibido na tela. 
                 <Label Text="&#xf1ec;" FontSize="Large">
                     <Label.FontFamily>
                         <OnPlatform x:TypeArguments="x:String" 
-                                    Android="fa-solid-900.ttf#Font Awesome 5 Free Regular" 
+                                    Android="fa-solid-900.ttf#Font Awesome 5 Free Solid" 
                                     iOS="Font Awesome 5 Free"/>
                     </Label.FontFamily>
                 </Label>
