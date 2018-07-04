@@ -66,48 +66,54 @@ Abaixo se encontra o código do Layout da tela:
 
   ```
   
-  Agora o Code Behind responsável por validar os dados da tela e pelas ações dos botões de próximo e anterior:
+  Agora vamos criar o Code Behind que será responsável por validar os dados da tela e pelas ações dos botões de limpar e calcular:
+  
+  Primeiro vamos adicionar as propriedades para a classe representando nossos elementos da tela:
+  
+  ```c#
+      public int TotalPessoas { get; set; }
+      public double ValorTotal { get; set; }
+      public int PorcentagemGarcom { get; set; }
+  ```
 
-```c#
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms;
+Após, vamos criar as chamadas das funções de click no botão de limpar e calcular:
 
-namespace DividirConta
-{
-	public partial class MainPage : ContentPage
-	{
-        public int TotalPessoas { get; set; }
-        public double ValorTotal { get; set; }
-        public int PorcentagemGarcom { get; set; }
-
-        public MainPage()
-		    {
-			      InitializeComponent();
+  ```c#
+   public MainPage()
+   {
+	 InitializeComponent();
             
-            LimparButton.Clicked += LimparButton_Clicked;
-            CalcularButton.Clicked += CalcularButton_Clicked;
-        }
+         LimparButton.Clicked += LimparButton_Clicked;
+         CalcularButton.Clicked += CalcularButton_Clicked;
+    }
+    
+    private void LimparButton_Clicked(object sender, EventArgs e)
+    {
+	 	throw new NotImplementedException();
+    }
+    
+    private void CalcularButton_Clicked(object sender, EventArgs e)
+    {
+		throw new NotImplementedException();
+    }
+  ```
+  
+  Na função de limpar, vamos apagar todos os textos dos elementos da tela:
 
-        private void CalcularButton_Clicked(object sender, EventArgs e)
-        {
-            if (IsValid())
-            {
-                Navigation.PushAsync(new ResultadoPage(TotalPessoas, ValorTotal, PorcentagemGarcom));
-            }
-        }        
-
-        private void LimparButton_Clicked(object sender, EventArgs e)
+ ```c#
+     private void LimparButton_Clicked(object sender, EventArgs e)
         {
             TotalPessoasEntry.Text = string.Empty;
             ValorTotalEntry.Text = string.Empty;
             PorcentagemGarcomEntry.Text = string.Empty;
         }
-
-        private bool IsValid()
+ ```
+ 
+ Quando clicarmos em calcular, devemos validar se os dados preenchidos estão corretos, para isso vamos criar a função IsValid():
+ 
+ 
+  ```c#
+   private bool IsValid()
         {
             var valido = true;
             var mensagemErro = string.Empty;
@@ -152,10 +158,20 @@ namespace DividirConta
 
             return valido;
         }
-    }
-}
-```
-
+  ```
+  
+  Agora vamos implementar a função  de calcular, ela chamará a função de validação de dados e se estiver tudo correto, chamará a próxima tela que exibirá o resultado:  
+  
+  ```c#
+    private void CalcularButton_Clicked(object sender, EventArgs e)
+        {
+            if (IsValid())
+            {
+                Navigation.PushAsync(new ResultadoPage(TotalPessoas, ValorTotal, PorcentagemGarcom));
+            }
+        }  
+  ```
+  
 ## Como criar uma page no Visual Studio
 
 ![Criar Page](https://github.com/dayaneLima/dividirConta/blob/master/Docs/Imgs/dividirContaCriarPage.gif)
